@@ -4,3 +4,12 @@
 body {
     background-color: blanchedalmond;
 }
+.nav-link {
+    border: 2px solid transparent;
+    margin: 0 0 -0.2rem 0;
+    padding: 0.2rem;
+    color: blanchedalmond;
+}
+.nav-link.router-link-active {
+    border: 2px solid blanchedalmond;
+}

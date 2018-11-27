@@ -1,0 +1,8 @@
+:host {
+    background-color: brown;
+    color: white;
+    display: block;
+}
+:host address {
+    margin-top: 2rem;
+}

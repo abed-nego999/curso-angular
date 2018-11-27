@@ -7,9 +7,9 @@ import { environment } from 'src/environments/environment.prod';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  private title: string;
-  private logo: string;
-  private env: string;
+  public title: string;
+  public logo: string;
+  public env: string;
   constructor() { }
 
   ngOnInit() {
