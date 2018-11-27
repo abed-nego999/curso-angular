@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -10,9 +11,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CoreModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  exports: [], // Esto lo añade el profe
+  bootstrap: [AppComponent] // Equivale a export, pero es especial y hace referencia al módulo raíz
 })
 export class AppModule { }

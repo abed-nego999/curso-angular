@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'dev-root',
@@ -7,7 +6,4 @@ import { environment } from 'src/environments/environment.prod';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-devoteam';
-  logo = '../assets/logo.svg';
-  env = environment.api
 }
