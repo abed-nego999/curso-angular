@@ -1,0 +1,10 @@
+<dev-new-task (evNewTask)="addTask($event)"></dev-new-task>
+
+<div class="mt-3" [class.invisible]="!aTasks.length">
+    <h3>Lista de tareas</h3>
+    <ul class="list-group container">
+        <li class="list-group-item row" *ngFor="let task of aTasks; let i = index"> <!-- La variable "index" se define implícitamente en el *ngFor, pero solo existe entre las comillas del *ngFor -->
+            <dev-task [task]="task" [index]="i" (evDeleteTask)="deleteTask($event)" ></dev-task>
+        </li>
+    </ul>
+</div>

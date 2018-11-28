@@ -1,0 +1,4 @@
+<input class="completed" type="checkbox" name="isCompleted" id="isCompleted"
+  [(ngModel)]="task.isCompleted">
+<span>{{ task.nombre }}</span>
+<span class="borrar" (click)="sendDeleteTask()">🗑️</span>

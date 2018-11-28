@@ -13,3 +13,11 @@ body {
 .nav-link.router-link-active {
     border: 2px solid blanchedalmond;
 }
+.borrar {
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+}
+.completed {
+    margin-right: 1rem;
+}
