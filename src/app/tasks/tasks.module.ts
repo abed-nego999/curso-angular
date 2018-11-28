@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { ListaPlusComponent } from './lista-plus/lista-plus.component';
 import { TaskComponent } from './task/task.component';
 import { NewTaskComponent } from './new-task/new-task.component';
-import { PruebaDirective } from './prueba.directive';
+import { ImportantDirective } from './important.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { PruebaDirective } from './prueba.directive';
     ListaPlusComponent,
     TaskComponent,
     NewTaskComponent,
-    PruebaDirective
+    ImportantDirective
   ],
   imports: [
     CommonModule,
