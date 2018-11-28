@@ -9,6 +9,13 @@ import { HomeModule } from './home/home.module';
 import { TasksModule } from './tasks/tasks.module';
 import { AboutModule } from './about/about.module';
 
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+import { BlogModule } from './blog/blog.module';
+
+// the second parameter 'es' is optional
+registerLocaleData(localeEs, 'es');
+
 @NgModule({
   declarations: [
     AppComponent
@@ -20,7 +27,8 @@ import { AboutModule } from './about/about.module';
     CoreModule,
     HomeModule,
     TasksModule,
-    AboutModule
+    AboutModule,
+    BlogModule
   ],
   providers: [],
   exports: [], // Esto lo añade el profe
