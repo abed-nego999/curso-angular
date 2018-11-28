@@ -1,0 +1,8 @@
+.borrar {
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+}
+.completed {
+    margin-right: 1rem;
+}
