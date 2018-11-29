@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AboutComponent } from './about.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 describe('AboutComponent', () => {
   let component: AboutComponent;
@@ -8,7 +10,11 @@ describe('AboutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AboutComponent ]
+      declarations: [ AboutComponent ],
+      imports: [
+        NgbModule,
+        FontAwesomeModule
+      ]
     })
     .compileComponents();
   }));

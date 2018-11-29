@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  api: 'Desarrollo'
+  api: 'Desarrollo',
+  apiLibros: 'https://www.googleapis.com/books/v1/volumes?q=intitle:'
 };
 
 /*

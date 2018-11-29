@@ -1,24 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TaskComponent } from './task.component';
-import { FormsModule } from '@angular/forms';
+import { GoogleBooksComponent } from './google-books.component';
 
-describe('TaskComponent', () => {
-  let component: TaskComponent;
-  let fixture: ComponentFixture<TaskComponent>;
+describe('GoogleBooksComponent', () => {
+  let component: GoogleBooksComponent;
+  let fixture: ComponentFixture<GoogleBooksComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TaskComponent ],
-      imports: [
-        FormsModule
-      ]
+      declarations: [ GoogleBooksComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TaskComponent);
+    fixture = TestBed.createComponent(GoogleBooksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
