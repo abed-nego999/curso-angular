@@ -8,13 +8,12 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class HeaderComponent implements OnInit {
   public title: string;
-  public logo: string;
+  public logo = '../assets/logo.svg';
   public env: string;
   constructor() { }
 
   ngOnInit() {
     this.title = 'angular-devoteam';
-    this.logo = '../assets/logo.svg';
     this.env = environment.api;
   }
 

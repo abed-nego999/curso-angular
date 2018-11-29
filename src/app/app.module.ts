@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule  } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +14,7 @@ import { AboutModule } from './about/about.module';
 import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 import { BlogModule } from './blog/blog.module';
+import { CursosModule } from './cursos/cursos.module';
 
 // the second parameter 'es' is optional
 registerLocaleData(localeEs, 'es');
@@ -23,12 +26,16 @@ registerLocaleData(localeEs, 'es');
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     CoreModule,
     HomeModule,
     TasksModule,
     AboutModule,
-    BlogModule
+    BlogModule,
+    CursosModule,
+    NgbModule,
+    FontAwesomeModule
   ],
   providers: [],
   exports: [], // Esto lo añade el profe

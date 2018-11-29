@@ -1,0 +1,61 @@
+<h4>Formulario ModelDriven</h4>
+<form name="form-md" [formGroup]="formGroup" (submit)="enviar($event)">
+  <fieldset>
+    <legend>Datos de usuario</legend>
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" class="form-control" required name="nombre" id="nombre" formControlName="nombre">
+      <div class="error" *ngIf="formGroup.touched">
+        <p *ngIf="!!nombre.errors.required">Campo obligatorio</p>
+        <p *ngIf="!!nombre.errors.minlength">Ponle más letrucas</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="apellidos">Apellidos</label>
+      <input type="text" class="form-control" name="apellidos" id="apellidos" formControlName="apellidos">
+      <div class="error" *ngIf="formGroup.touched">
+        <p *ngIf="!!apellidos.errors.required">Campo obligatorio</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Correo</label>
+      <input type="email" class="form-control" name="email" id="email" formControlName="email" [class.is-invalid]="!!email.invalid && formGroup.touched">
+      <div class="error" *ngIf="formGroup.touched">
+        <p *ngIf="!!email.errors.required">Campo obligatorio</p>
+        <p *ngIf="!!email.errors.email">Email incorrecto</p>
+      </div>
+    </div>       
+  </fieldset>
+  <fieldset>
+    <legend>Datos del curso</legend>
+    <div class="form-check">
+      <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" name="isOk" id="isOk" required formControlName="isOk">
+      Estoy de acuerdo con las normas del curso y eso
+      </label>
+    </div>  
+    <div>
+      <legend>Turno</legend>
+      <div class="form-check" *ngFor="let turno of aTurnos">
+        <label class="form-check-label" [title]="turno.horario">
+            <input type="radio" class="form-check-input" name="turno" [id]="'turno-' + turno.id"
+            [value]="turno" formControlName="turno">
+            {{ turno.nombre |titlecase }}
+        </label>
+      </div>
+    </div>
+    <div class="form-group" >
+      <label for="curso">Selecciona el tema</label>
+      <select class="form-control" name="curso" id="curso" formControlName="curso">
+        <option *ngFor="let curso of aCursos" [title]="curso.descripcion" [ngValue]="curso">{{ curso.nombre }}</option>
+      </select>
+    </div>
+  </fieldset>
+  <div class="btn-group">
+      <button type="submit" class="btn btn-primary" [disabled]="formGroup.invalid">Enviar</button>
+      <button type="reset" class="btn btn-danger" [disabled]="formGroup.pristine">Borrar</button>
+  </div>
+</form>
+<div>
+  <p>{{ formGroup.value | json }}</p>
+</div>

@@ -5,13 +5,18 @@ body {
     background-color: blanchedalmond;
 }
 .nav-link {
-    border: 2px solid transparent;
-    margin: 0 0 -0.2rem 0;
-    padding: 0.2rem;
+    border-top: 0.3rem solid transparent;
+    border-right: 0.3rem solid transparent;
+    border-bottom: 0.3rem solid transparent;
+    border-left: 0.3rem solid transparent;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    margin: 0 0 -0.3rem 0;
+    padding: 0.4rem;
     color: blanchedalmond;
 }
 .nav-link.router-link-active {
-    border: 2px solid blanchedalmond;
+    border: 0.3rem solid blanchedalmond;
 }
 .borrar {
     cursor: pointer;

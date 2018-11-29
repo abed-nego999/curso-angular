@@ -21,8 +21,8 @@ class Person {
     }
 }
 
-const o = new Person('Pepe', 35);
-o.saludar();
+let o2 = new Person('Pepe', 35);
+o2.saludar();
 
 
 class Alumno extends Person {
@@ -36,5 +36,5 @@ class Alumno extends Person {
     }
 }
 
-o = new Alumno('Luis', 26, 'Angularismo');
-o.saludar();
+o2 = new Alumno('Luis', 26, 'Angularismo');
+o2.saludar();

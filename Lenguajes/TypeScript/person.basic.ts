@@ -11,8 +11,8 @@ class PersonBasic {
     }
 }
 
-let o = new PersonBasic('Pepe', 35);
-o.saludar();
+let o1 = new PersonBasic('Pepe', 35);
+o1.saludar();
 
 
 class AlumnoBasic extends PersonBasic {
@@ -28,5 +28,5 @@ class AlumnoBasic extends PersonBasic {
     }
 }
 
-o = new AlumnoBasic('Luis', 26, 'Angularismo');
-o.saludar();
+o1 = new AlumnoBasic('Luis', 26, 'Angularismo');
+o1.saludar();
