@@ -13,7 +13,7 @@ export class GoogleBooksComponent implements OnInit {
   aLibros: Array<Libro>;
   pensando = false;
   baseUrl: string;
-  constructor(public x: HttpClient) { }
+  constructor(public http: HttpClient) { }
 
   ngOnInit() {
     this.aLibros = new Array<Libro>();
@@ -21,5 +21,17 @@ export class GoogleBooksComponent implements OnInit {
   }
 
   buscar(ev: Event) {
+    const url = this.baseUrl + this.clave;
+    this.http.get(url).toPromise().then(
+      (data: any) => {
+        let aData = [];
+        aData = data.items.map((value) => {
+          return {id: '', autor: '', titulo: value.volumeInfo.title};
+        });
+        console.log(data);
+        this.aLibros = Object.assign([], aData);
+      },
+      (error) => { console.log(error); }
+    );
   }
 }
