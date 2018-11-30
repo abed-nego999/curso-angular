@@ -21,17 +21,24 @@ export class GoogleBooksComponent implements OnInit {
   }
 
   buscar(ev: Event) {
+    this.pensando = true;
     const url = this.baseUrl + this.clave;
     this.http.get(url).toPromise().then(
       (data: any) => {
         let aData = [];
         aData = data.items.map((value) => {
-          return {id: '', autor: '', titulo: value.volumeInfo.title};
+          return {id: value.volumeInfo.industryIdentifiers[0].type + ': ' + value.volumeInfo.industryIdentifiers[0].identifier,
+            autor: value.volumeInfo.authors[0],
+            titulo: value.volumeInfo.title};
         });
         console.log(data);
         this.aLibros = Object.assign([], aData);
+        this.pensando = false;
       },
-      (error) => { console.log(error); }
+      (error) => {
+        console.log(error);
+        this.pensando = false;
+      }
     );
   }
 }
