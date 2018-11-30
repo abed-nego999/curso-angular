@@ -1,0 +1,29 @@
+<div class="form-group">
+  <label for="campo-id">id</label>
+  <input type="text" name="campo-id" id="campo-id" class="form-control"
+  [(ngModel)]="oUser.id">
+</div>
+<div class="form-group">
+  <label for="campo-nombre">Nombre</label>
+  <input type="text" name="campo-nombre" id="campo-nombre" class="form-control"
+  [(ngModel)]="oUser.nombre">
+</div>
+<div class="form-group">
+  <label for="campo-correo">Correo</label>
+  <input type="text" name="campo-correo" id="campo-correo" class="form-control"
+  [(ngModel)]="oUser.correo">
+</div>
+<div class="btn-group">
+  <button type="button" class="btn btn-primary" (click)="getUsers(); getUser(this.oUser.id)">Buscar</button>
+  <button type="reset" class="btn btn-primary" (click)="addUser()">Añadir</button>
+  <button type="button" class="btn btn-primary" (click)="modifyUser()">Modificar</button>
+  <button type="button" class="btn btn-primary" (click)="borrarUser()">Borrar</button>
+</div>
+<div class="mb-3" *ngIf="aUsers.length">
+  <h4>Resultados</h4>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let item of aUsers">
+        {{ item.nombre }} <em>({{ item.correo }})</em><br><a [routerLink]="'./' + item.id">Detalles</a>
+    </li>
+  </ul>
+</div>

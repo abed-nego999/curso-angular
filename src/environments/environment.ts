@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   api: 'Desarrollo',
-  apiLibros: 'https://www.googleapis.com/books/v1/volumes?q=intitle:'
+  apiLibros: 'https://www.googleapis.com/books/v1/volumes?q=intitle:',
+  apiUsers: 'http://localhost:3000/users/'
 };
 
 /*
