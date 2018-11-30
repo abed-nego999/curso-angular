@@ -28,8 +28,10 @@ export class GoogleBooksComponent implements OnInit {
         let aData = [];
         aData = data.items.map((value) => {
           return {id: value.volumeInfo.industryIdentifiers[0].type + ': ' + value.volumeInfo.industryIdentifiers[0].identifier,
-            autor: value.volumeInfo.authors[0],
-            titulo: value.volumeInfo.title};
+            autor: value.volumeInfo.authors ? value.volumeInfo.authors.join(', ') : '',
+            titulo: value.volumeInfo.title,
+            enlace: value.accessInfo.webReaderLink,
+            thumbnail: value.volumeInfo.imageLinks ? value.volumeInfo.imageLinks.smallThumbnail : '' };
         });
         console.log(data);
         this.aLibros = Object.assign([], aData);
